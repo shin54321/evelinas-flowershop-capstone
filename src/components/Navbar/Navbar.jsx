@@ -1,0 +1,28 @@
+import "./navbar.css";
+
+import TopNavbar from "./TopNavbar";
+import BottomNavbar from "./BottomNavbar";
+
+function Navbar() {
+
+    return (
+
+        <>
+
+            <TopNavbar />
+
+            {/* Desktop Only */}
+
+            <div className="d-none d-lg-block">
+
+                <BottomNavbar />
+
+            </div>
+
+        </>
+
+    );
+
+}
+
+export default Navbar;
