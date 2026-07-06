@@ -1,77 +1,63 @@
 import "./hero.css";
+import { Link } from "react-router-dom";
 
 function Hero() {
-    return (
+  return (
+    <section className="hero">
 
-        <section className="hero">
+      <div className="container">
 
-            <div className="container-fluid px-lg-5 px-3">
+        <div className="hero-content">
 
-                <div className="row align-items-center">
+          <span className="hero-badge">
+            ✨ AI Powered Floristry
+          </span>
 
-                    {/* Left Side */}
+          <h1>
+            Fresh Flowers,
+            <br />
+            <span>Delivered with Love</span>
+          </h1>
 
-                    <div className="col-lg-6">
+          <p>
+            Discover the perfect bouquet for every moment.
+            Personalized recommendations powered by AI.
+          </p>
 
-                        <span className="hero-tag">
-                            🌸 Fresh Flowers Everyday
-                        </span>
+          <div className="hero-buttons">
 
-                        <h1 className="hero-title">
+            <Link to="/catalog" className="btn btn-light">
+              Shop Now
+            </Link>
 
-                            Beautiful Bouquets
+            <Link to="/recommendation" className="btn btn-outline-light">
+              Get AI Picks
+            </Link>
 
-                            <br />
+          </div>
 
-                            Crafted With Love
+          <div className="hero-features">
 
-                        </h1>
+            <span>
+              🚚 Same Day Delivery
+            </span>
 
-                        <p className="hero-description">
+            <span>
+              🌸 Freshness Guaranteed
+            </span>
 
-                            Surprise someone special with beautifully
-                            handcrafted bouquets. Explore our AI-powered
-                            recommendations and enjoy fast delivery.
+            <span>
+              ⭐ 4.9 Rated
+            </span>
 
-                        </p>
+          </div>
 
-                        <div className="hero-buttons">
+        </div>
 
-                            <button className="btn btn-shop">
+      </div>
 
-                                Shop Now
-
-                            </button>
-
-                            <button className="btn btn-ai">
-
-                                AI Recommendation
-
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                    {/* Right Side */}
-
-                    <div className="col-lg-6 text-center">
-
-                        <img
-                            src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?w=900"
-                            alt="Flower Bouquet"
-                            className="hero-image"
-                        />
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    );
+    </section>
+  );
 }
 
 export default Hero;
