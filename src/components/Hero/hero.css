@@ -4,12 +4,7 @@
     display:flex;
     align-items:center;
 
-    background:linear-gradient(
-        135deg,
-        #ff2d75 0%,
-        #ff4b8b 40%,
-        #b43cff 100%
-    );
+    background:var(--primary-gradient);
 
     color:white;
 

@@ -8,16 +8,17 @@ function Navbar() {
     return (
 
         <>
+            <header className="site-header">
+                <TopNavbar />
 
-            <TopNavbar />
+                {/* Desktop Only */}
 
-            {/* Desktop Only */}
+                <div className="d-none d-lg-block">
 
-            <div className="d-none d-lg-block">
+                    <BottomNavbar />
 
-                <BottomNavbar />
-
-            </div>
+                </div>
+            </header>
 
         </>
 

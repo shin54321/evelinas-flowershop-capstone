@@ -12,6 +12,14 @@
 
     --white:#FFFFFF;
     --light:#FFF8FA;
+    
+    /*==== Gradients ====*/
+    --primary-gradient:linear-gradient(
+        135deg,
+        #ff2d75 0%,
+        #ff4b8b 40%,
+        #b43cff 100%
+    );
 
     /* ===== Text ===== */
 
