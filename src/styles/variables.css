@@ -21,6 +21,14 @@
         #b43cff 100%
     );
 
+    --primary-gradient-hover:
+        linear-gradient(
+            135deg,
+            #e91e63 0%,
+            #f5357b 40%,
+            #9c27ff 100%
+    );
+
     /* ===== Text ===== */
 
     --dark:#2D2D2D;

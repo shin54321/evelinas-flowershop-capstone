@@ -9,8 +9,8 @@ function Hero() {
 
         <div className="hero-content">
 
-          <span className="hero-badge">
-            ✨ AI Powered Floristry
+          <span className="hero-badge bi bi-stars">
+            AI-Powered Floristry
           </span>
 
           <h1>
@@ -26,11 +26,11 @@ function Hero() {
 
           <div className="hero-buttons">
 
-            <Link to="/catalog" className="btn btn-light">
+            <Link to="/catalog" className="shop-now btn btn-light">
               Shop Now
             </Link>
 
-            <Link to="/recommendation" className="btn btn-outline-light">
+            <Link to="/recommendation" className="btn btn-outline-light bi bi-stars">
               Get AI Picks
             </Link>
 
@@ -44,10 +44,6 @@ function Hero() {
 
             <span>
               🌸 Freshness Guaranteed
-            </span>
-
-            <span>
-              ⭐ 4.9 Rated
             </span>
 
           </div>
