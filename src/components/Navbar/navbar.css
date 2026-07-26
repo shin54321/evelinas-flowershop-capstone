@@ -24,14 +24,18 @@
 
 .logo-icon{
 
-    width:52px;
-    height:52px;
+    width:45px;
+    height:45px;
+
+    border-radius:12px;
 
     display:flex;
     justify-content:center;
     align-items:center;
 
-    font-size:30px;
+    background:var(--primary-gradient);
+
+    font-size:22px;
 
 }
 
@@ -46,7 +50,9 @@
 .logo-subtitle{
 
     color:#888;
-    font-size:.75rem;
+    font-size:.80rem;
+
+    display: block;
 
 }
 
@@ -292,27 +298,6 @@
 
 @media(max-width:768px), (max-width:992px){
 
-    .logo-icon{
-
-        width:40px;
-        height:40px;
-
-        font-size:24px;
-
-    }
-
-    .logo-title{
-
-        font-size:1rem;
-
-    }
-
-    .logo-subtitle{
-
-        font-size:.75rem;
-
-    }
-
     .header-icons .icon-btn{
 
         width:36px;
@@ -358,18 +343,6 @@
 }    
 
 @media(max-width:576px){
-
-    .logo-title{
-
-        font-size:0.85rem;
-
-    }
-
-    .logo-subtitle{
-
-        font-size:0.625rem;
-
-    }
     
     .visible-icons .header-icons .icon-btn{
 

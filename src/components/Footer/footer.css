@@ -1,0 +1,238 @@
+/* ===========================
+   FOOTER
+=========================== */
+
+.footer{
+
+    background:#111827;
+
+    color:#E5E7EB;
+
+    padding:30px 15px;
+
+}
+
+.footer-horizontal{
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+}
+/* ===========================
+   LOGO
+=========================== */
+
+.footer-logo{
+
+    width:45px;
+    height:45px;
+
+    border-radius:12px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:var(--primary-gradient);
+
+    font-size:22px;
+
+}
+
+.footer h5{
+
+    color:white;
+    font-weight:700;
+    font-size: medium;
+
+}
+
+.footer small{
+
+    color:#9CA3AF;
+    font-size: small;
+
+}
+
+.footer-description{
+
+    color:#D1D5DB;
+    font-size:.80rem;
+
+    text-align: left;
+    line-height:1.5;
+
+}
+
+/* ===========================
+   SOCIAL
+=========================== */
+
+.footer-social{
+    
+    gap:10px;
+    padding-left: 10px;
+    margin: 10px;
+
+}
+
+.footer-social a{
+
+    width:35px;
+    height:35px;
+    
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:white;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    transition:.3s;
+
+}
+
+.footer-social a:hover{
+
+    background:var(--primary-gradient);
+
+    border-color:transparent;
+
+}
+
+
+/* ===========================
+   HEADINGS
+=========================== */
+
+.footer h6{
+
+    color:white;
+    margin-bottom:10px;
+    font-weight:500;
+
+}
+
+/* ===========================
+   LINKS
+=========================== */
+
+.footer-column{
+
+    font-size: 0.80rem;
+    gap: 22px;
+    text-align: left;
+
+}
+
+.footer-links{
+
+    list-style:none;
+    
+    padding:0;
+    margin:0;
+
+}
+
+.footer-links li{
+
+    margin-bottom:5px;
+
+}
+
+.footer-links a{
+
+    color:#D1D5DB;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+.footer-links a:hover{
+
+    color:#E91E63;
+
+}
+
+/* ===========================
+   CONTACT
+=========================== */
+
+.footer-contact{
+
+    list-style:none;
+
+    padding:0;
+    margin:0;
+
+}
+
+.footer-contact li{
+
+    margin-bottom:5px;
+
+    color:#D1D5DB;
+
+}
+
+
+/* ===========================
+   BOTTOM
+=========================== */
+
+hr{
+
+    background-color: #c4c4c68d;
+    width: 100%;
+
+}
+
+.footer-bottom{
+
+    padding:10px 0;
+
+    color:#d4dae5;
+    font-size:.9rem;
+
+    margin: 0 auto;
+
+}
+
+.footer-bottom small{
+
+    color:#6B7280;
+
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width:768px), (max-width:576px){
+
+    .footer, .footer-description{
+
+        display:flex;
+        flex-direction:column;
+        align-items:flex-start;
+
+        text-align: left;
+        font-size: 0.90rem;
+
+        width:100%;
+        gap:10px;
+
+    }
+
+    .footer-column{
+        flex-direction: column;
+
+    }
+    
+}
