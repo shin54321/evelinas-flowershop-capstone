@@ -1,4 +1,4 @@
-import "./navbar.css";
+import "./Navbar.css";
 
 import TopNavbar from "./TopNavbar";
 import BottomNavbar from "./BottomNavbar";
