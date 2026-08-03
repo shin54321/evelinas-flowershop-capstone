@@ -31,7 +31,7 @@ function CategorySection() {
 
                         <div
                             key={category.id}
-                            className="col-6 col-md-4 col-lg-2"
+                            className="col-4 col-md-4 col-lg-2"
                         >
                             <CategoryCard category={category} />
                         </div>

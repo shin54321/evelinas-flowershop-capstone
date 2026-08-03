@@ -41,9 +41,9 @@ function TopNavbar() {
                         <button className="btn icon-btn">
                             <i className="bi bi-heart"></i>
                         </button>
-                        <button className="btn icon-btn">
+                        <Link to="/cart" className="btn icon-btn">
                             <i className="bi bi-cart"></i>
-                        </button>
+                        </Link>
                     </div>
 
                     {/* Login buttons — desktop only, sit right after icons */}
