@@ -11,7 +11,7 @@ function ProductSection() {
     return(
 
         <section className="product-section mb-5">
-            <div className="container">
+            <div className="container-lg">
 
                 {/* Section Header */}
                 <div className="trending-header d-flex flex-wrap justify-content-between align-items-center mb-4">

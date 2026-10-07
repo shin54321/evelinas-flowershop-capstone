@@ -9,7 +9,7 @@ function CategorySection() {
 
         <section className="category-section">
 
-            <div className="container">
+            <div className="container-lg">
 
                 {/* Section Heading */}
 

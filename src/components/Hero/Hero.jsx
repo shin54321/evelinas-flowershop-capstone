@@ -5,7 +5,7 @@ function Hero() {
   return (
     <section className="hero">
 
-      <div className="container">
+      <div className="container-lg">
 
         <div className="hero-content">
 
@@ -19,7 +19,7 @@ function Hero() {
             <span>Delivered with Love</span>
           </h1>
 
-          <p>
+          <p className="hero-subtitle">
             Discover the perfect bouquet for every moment.
             Personalized recommendations powered by AI.
           </p>

@@ -1,0 +1,164 @@
+
+/* =========================
+   SHOP BY OCCASION SECTION
+========================= */
+
+.shop-by-occasion {
+    padding:30px 50px;
+
+    background: linear-gradient(
+        135deg,
+        #fbf5ff 0%,
+        #fff0f5 100%
+    );
+}
+
+
+/* =========================
+   SECTION HEADER
+========================= */
+
+.occasion-header {
+    margin-bottom: 35px;
+}
+
+.occasion-header h2 {
+    margin-bottom: 8px;
+
+    color: #172b4d;
+
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.occasion-header p {
+    margin: 0;
+
+    color: #667085;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   OCCASION GRID
+========================= */
+
+.occasion-grid {
+    display: grid;
+
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+
+    gap: 15px;
+}
+
+
+/* =========================
+   OCCASION CARD
+========================= */
+
+.occasion-card {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    min-height: 90px;
+
+    padding: 15px 10px;
+
+    background: white;
+
+    border: 1px solid #f9dce7;
+    border-radius: 14px;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+.occasion-card:hover {
+    border-color: var(--primary);
+
+    background: #fff7fa;
+
+    transform: translateY(-4px);
+
+    box-shadow: 0 6px 15px rgba(233, 30, 99, 0.1);
+}
+
+
+/* =========================
+   OCCASION ICON
+========================= */
+
+.occasion-icon {
+    font-size: 26px;
+
+    line-height: 1;
+}
+
+
+/* =========================
+   OCCASION NAME
+========================= */
+
+.occasion-name {
+    color: #172b4d;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    text-align: center;
+
+    transition: color 0.2s ease;
+}
+
+.occasion-card:hover .occasion-name {
+    color: var(--primary);
+}
+
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+/* Tablets */
+@media (max-width: 991px) {
+
+    .occasion-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+}
+
+/* Mobile */
+@media (max-width: 575px) {
+
+    .shop-by-occasion {
+        padding: 40px 0;
+    }
+
+    .occasion-header h2 {
+        font-size: 22px;
+    }
+
+    .occasion-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 12px;
+    }
+
+    .occasion-card {
+        min-height: 85px;
+    }
+
+    .occasion-icon {
+        font-size: 24px;
+    }
+
+}
