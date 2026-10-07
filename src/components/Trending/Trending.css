@@ -136,6 +136,10 @@
     cursor: pointer;
 }
 
+.favorite-btn.active {
+    color: var(--primary);
+}
+
 .favorite-btn:hover{
     color: var(--primary);
 }

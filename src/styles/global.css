@@ -29,3 +29,28 @@ img{
     display:block;
 
 }
+
+.Toastify__toast {
+    min-height: 50px !important;
+}
+
+.Toastify__toast-theme--light.Toastify__toast--success {
+    
+    background: rgb(231, 255, 231);
+
+    color: rgb(66, 105, 7);
+
+}
+
+.Toastify__toast-theme--light.Toastify__toast--info {
+
+    background: lightcyan;
+
+    color: rgb(9, 45, 108)
+
+}
+
+.Toastify__toast-icon {
+    width: 15px;
+    height: 15px;
+}

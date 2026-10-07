@@ -36,7 +36,7 @@ function ProductSection() {
                     {products.map((product) => (
                         <div
                             key={product.id}
-                            className="col-12 col-md-6 col-lg-3"
+                            className="col-6 col-md-6 col-lg-3"
                         >
                             <ProductCard product={product} />
 

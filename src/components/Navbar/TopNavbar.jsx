@@ -38,9 +38,9 @@ function TopNavbar() {
                         <button className="btn icon-btn">
                             <i className="bi bi-bell"></i>
                         </button>
-                        <button className="btn icon-btn">
+                        <Link to="/favorites" className="btn icon-btn">
                             <i className="bi bi-heart"></i>
-                        </button>
+                        </Link>
                         <Link to="/cart" className="btn icon-btn">
                             <i className="bi bi-cart"></i>
                         </Link>

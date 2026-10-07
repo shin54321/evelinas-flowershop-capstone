@@ -1,0 +1,589 @@
+/* =========================
+   REVIEW SECTION
+========================= */
+
+.review-section {
+    margin-top: 30px;
+
+    background: white;
+
+    border: 1px solid #f3dce4;
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+
+/* =========================
+   TABS
+========================= */
+
+.review-tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    border-bottom: 1px solid #f3dce4;
+}
+
+.review-tab {
+    position: relative;
+
+    padding: 10px;
+
+    border: none;
+    background: white;
+
+    color: #555;
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    transition: color 0.2s ease;
+}
+
+.review-tab.active {
+    color: var(--primary);
+}
+
+.review-tab.active::after {
+    content: "";
+
+    position: absolute;
+
+    bottom: -1px;
+    left: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background: var(--primary);
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.review-content {
+    padding: 15px 20px;
+}
+
+
+/* =========================
+   RATING SUMMARY
+========================= */
+
+.rating-summary {
+    display: grid;
+
+    grid-template-columns: 150px 1fr;
+
+    gap: 25px;
+
+    padding: 15px 20px;
+
+    margin-bottom: 15px;
+
+    background: #fff1f4;
+
+    border-radius: 14px;
+}
+
+
+/* =========================
+   OVERALL RATING
+========================= */
+
+.overall-rating {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.overall-rating h2 {
+    margin: 0;
+
+    color: var(--primary);
+
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.overall-stars {
+    display: flex;
+
+    gap: 2px;
+
+    color: #ffc107;
+
+    font-size: 12px;
+}
+
+.overall-rating span {
+    margin-top: 5px;
+
+    color: #777;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   RATING BREAKDOWN
+========================= */
+
+.rating-breakdown {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 5px;
+}
+
+.rating-row {
+    display: grid;
+
+    grid-template-columns: 15px 20px 1fr 20px;
+
+    align-items: center;
+
+    gap: 5px;
+}
+
+.rating-number {
+    color: #555;
+
+    font-size: 11px;
+}
+
+.rating-row > i {
+    color: #ffc107;
+
+    font-size: 11px;
+}
+
+.rating-bar {
+    height: 7px;
+
+    background: #f0f0f0;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+.rating-bar-fill {
+    height: 100%;
+
+    background: #ffc107;
+
+    border-radius: 10px;
+}
+
+.rating-count {
+    color: #777;
+
+    font-size: 11px;
+
+    text-align: right;
+}
+
+
+/* =========================
+   CUSTOMER REVIEW
+========================= */
+
+.customer-review {
+    padding: 14px;
+
+    border: 1px solid #f3dce4;
+
+    border-radius: 14px;
+}
+
+.review-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+.review-header strong {
+    color: #172b4d;
+
+    font-size: 12px;
+}
+
+.review-header small {
+    color: #888;
+
+    font-size: 10px;
+}
+
+.customer-review-stars {
+    margin: 5px 0;
+
+    color: #ffc107;
+
+    font-size: 12px;
+}
+
+.customer-review p {
+    margin: 0;
+
+    color: #555;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   DIVIDER
+========================= */
+
+.review-content hr {
+    margin: 20px 0;
+
+    border: 0;
+
+    border-top: 1px solid #f3dce4;
+
+    opacity: 1;
+}
+
+
+/* =========================
+   WRITE REVIEW
+========================= */
+
+.write-review h5 {
+    display: flex;
+
+    margin-bottom: 10px;
+
+    color: #172b4d;
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+
+/* =========================
+   FORM GROUP
+========================= */
+
+.review-form-group {
+    margin-bottom: 15px;
+}
+
+.review-form-group label {
+    display: flex;
+
+    margin-bottom: 7px;
+
+    color: #333;
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+
+/* =========================
+   RATING INPUT
+========================= */
+
+.review-rating-input {
+    display: flex;
+
+    gap: 2px;
+}
+
+.review-rating-input button {
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+
+    color: #d9dfe5;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition: color 0.2s ease;
+}
+
+.review-rating-input button i {
+    transition: color 0.2s ease;
+}
+
+.review-rating-input button i.bi-star-fill {
+    color: #ffc107;
+}
+
+
+/* =========================
+   TEXTAREA
+========================= */
+
+.write-review textarea {
+    border: 1px solid #f3cbd8;
+
+    background: #eae2e3;
+
+    border-radius: 8px;
+
+    resize: vertical;
+
+    font-size: 12px;
+}
+
+.write-review textarea:focus {
+    border-color: var(--primary);
+
+    box-shadow: 0 0 0 2px rgba(233, 30, 99, 0.1);
+}
+
+
+/* =========================
+   ATTACH PHOTO
+========================= */
+
+.attach-photo-btn {
+    display: flex;
+
+    padding: 0;
+
+    margin-bottom: 10px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #9c27ff;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   SUBMIT
+========================= */
+
+.submit-review-btn span {
+    padding: 7px 12px;
+
+    background: var(--primary);
+
+    color: white;
+
+    border-radius: 7px;
+
+    font-size: 12px;
+}
+
+.submit-review-btn:hover {
+    color: white;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   CUSTOMER PHOTOS
+========================= */
+
+.customer-photos {
+    padding: 5px;
+}
+
+
+/* =========================
+   CUSTOMER PHOTOS HEADER
+========================= */
+
+.customer-photos-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 18px;
+}
+
+.customer-photos-header h5 {
+    margin: 0;
+
+    color: #172b4d;
+
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.customer-photos-header h5 i {
+    color: var(--primary);
+}
+
+.customer-photos-header span {
+    color: #888;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   PHOTO GRID
+========================= */
+
+.customer-photos-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+}
+
+
+/* =========================
+   PHOTO CARD
+========================= */
+
+.customer-photo-card {
+    overflow: hidden;
+
+    background: white;
+
+    border: 1px solid #f3dce4;
+    border-radius: 12px;
+}
+
+.customer-photo-card img {
+    display: block;
+
+    width: 100%;
+    height: 120px;
+
+    object-fit: cover;
+}
+
+
+/* =========================
+   PHOTO INFORMATION
+========================= */
+
+.customer-photo-info {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 8px 10px;
+}
+
+.customer-photo-info strong {
+    color: #333;
+
+    font-size: 12px;
+}
+
+.customer-photo-info small {
+    color: #999;
+
+    font-size: 10px;
+}
+
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.customer-photos-empty {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 180px;
+
+    text-align: center;
+
+    background: #fff8fa;
+
+    border: 1px dashed #f3cbd8;
+
+    border-radius: 12px;
+}
+
+.customer-photos-empty > i {
+    margin-bottom: 10px;
+
+    color: var(--primary);
+
+    font-size: 30px;
+}
+
+.customer-photos-empty h6 {
+    margin-bottom: 5px;
+
+    color: #333;
+}
+
+.customer-photos-empty p {
+    margin: 0;
+
+    color: #888;
+
+    font-size: 12px;
+}
+
+/* =========================
+   YOU MAY ALSO LIKE
+========================= */
+
+.you-may-also-like {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.you-may-also-like-header {
+    margin-bottom: 15px;
+}
+
+.you-may-also-like-header h2 {
+    margin: 0;
+
+    color: #172b4d;
+
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.you-may-also-like-header p {
+    margin: 5px 0 0;
+
+    color: #888;
+
+    font-size: 11px;
+}

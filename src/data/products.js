@@ -35,7 +35,23 @@ const products = [
 
         inStock: true,
 
-        badge: "Best Seller"
+        badge: "Best Seller",
+
+        customerPhotos: [
+            {
+                id: 1,
+                customerName: "Isabelle F.",
+                date: "May 28, 2026",
+                image: orchidImg
+            },
+
+            {
+                id: 2,
+                customerName: "Maria L.",
+                date: "June 2, 2026",
+                image: rosebouquetImg
+            }
+        ],
     },
 
     {
@@ -143,6 +159,7 @@ const products = [
 
         badge: "Best Seller"
     }
+    
 ];
 
 export default products;

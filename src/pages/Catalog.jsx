@@ -3,6 +3,7 @@ function Catalog() {
     <>
       
       <h1>Catalog Page</h1>;
+
     </>
   );  
 }

@@ -1,6 +1,22 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { toast } from "react-toastify";
 
 function ProductCard({product}) {
+
+    const [isFavorite, setIsFavorite] = useState(false);
+
+    function handleFavoriteClick() {
+
+        if (!isFavorite) {
+            toast.success(`${product.name} added to favorites!`);
+        } else {
+            toast.info(`Removed from favorites!`);
+        }
+
+        setIsFavorite(!isFavorite);
+    }
+
     return (
 
         <div className="product-card">
@@ -16,7 +32,10 @@ function ProductCard({product}) {
                     </Link> 
 
                     {/* Badge */}
-                    <h6 className="product-badge bi bi-fire d-flex ">{product.badge}</h6>
+                    <span className="product-badge">
+                        <i className="bi bi-fire me-1"></i>
+                        {product.badge}
+                    </span>
 
                 </div>      
                 
@@ -33,8 +52,12 @@ function ProductCard({product}) {
                         </Link>
 
                         {/* Favorite Button */}
-                        <button className="favorite-btn mb-2" aria-label="Add to Favorites">
-                            <i className="bi bi-heart"></i>
+                        <button className={`favorite-btn ${isFavorite ? "active" : ""}`} 
+                        aria-label="Add to Favorites" 
+                        onClick={handleFavoriteClick}>
+
+                            <i className={`bi ${isFavorite ? "bi-heart-fill" : "bi-heart"}`}></i>
+
                         </button>
 
                     </div>
@@ -76,7 +99,7 @@ function ProductCard({product}) {
                 <div className="product-footer d-flex flex-wrap justify-content-between align-items-center">
 
                     {/* Price */}
-                    <h5 className="product-price"> ₱{product.price} </h5>
+                    <h5 className="product-price"> ₱{product.price.toLocaleString("en-PH")} </h5>
 
                     <Link
                         to={product.slug}
