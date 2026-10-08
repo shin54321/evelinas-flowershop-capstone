@@ -128,10 +128,6 @@
 /* Tablet */
 @media (max-width: 991px) {
 
-    .customer-gallery-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-
     .customer-gallery-photo {
         height: 120px;
     }
@@ -164,16 +160,6 @@
         flex-shrink: 0;
 
         padding: 7px 10px;
-    }
-
-    .customer-gallery-view-all span {
-        display: none;
-    }
-
-    .customer-gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-
-        gap: 10px;
     }
 
     .customer-gallery-photo {

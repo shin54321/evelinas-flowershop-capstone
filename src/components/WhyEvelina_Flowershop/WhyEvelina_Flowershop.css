@@ -1,0 +1,150 @@
+/* =========================
+   WHY EVELINA'S
+========================= */
+
+.why-evelinas {
+    padding:30px 50px;
+
+    background: white;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.why-evelinas-header {
+    margin-bottom: 30px;
+}
+
+.why-evelinas-header h2 {
+    margin: 0;
+
+    color: #172b4d;
+
+    font-size: 24px;
+    font-weight: 700;
+}
+
+
+/* =========================
+   BENEFIT GRID
+========================= */
+
+.why-evelinas-grid{
+    display: flex;
+
+    justify-content: center;
+
+    gap: 35px;
+}
+
+
+/* =========================
+   BENEFIT CARD
+========================= */
+
+.why-evelinas-card {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    min-height: 150px;
+
+    padding: 20px 18px;
+
+    background: #fff1f4;
+
+    border-radius: 14px;
+
+    text-align: center;
+
+    transition: all 0.2s ease;
+}
+
+.why-evelinas-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow: 0 6px 15px rgba(233, 30, 99, 0.08);
+}
+
+
+/* =========================
+   ICON
+========================= */
+
+.why-evelinas-icon {
+    margin-bottom: 12px;
+
+    font-size: 27px;
+
+    line-height: 1;
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.why-evelinas-card h3 {
+    margin: 0 0 8px;
+
+    color: #172b4d;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+.why-evelinas-card p {
+    max-width: 180px;
+
+    margin: 0;
+
+    color: #667085;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+
+@media (max-width: 575px), (max-width: 767px) {
+
+    .why-evelinas {
+        padding: 30px 25px;
+    }
+
+    .why-evelinas-header h2 {
+        font-size: 20px;
+    }
+
+    .why-evelinas-grid {
+        gap: 10px;
+    }
+
+    .why-evelinas-card {
+        min-height: 120px;
+        min-width: 100px;
+
+        padding: 10px 12px;
+    }
+
+    .why-evelinas-card p {
+        max-width: 150px;
+
+        font-size: 10px;
+    }
+
+}

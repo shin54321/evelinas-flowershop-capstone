@@ -31,12 +31,12 @@ function ProductSection() {
                 </div>
 
                 {/* Product Cards */}
-                <div className="row g-4 justify-content-center">
+                <div className="row g-4 justify-content-start">
 
                     {products.map((product) => (
                         <div
                             key={product.id}
-                            className="col-6 col-md-6 col-lg-3"
+                            className="col-6 col-md-4 col-lg-3"
                         >
                             <ProductCard product={product} />
 

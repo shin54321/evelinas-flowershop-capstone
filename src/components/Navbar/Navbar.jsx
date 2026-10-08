@@ -11,9 +11,11 @@ function Navbar() {
             <header className="site-header">
                 <TopNavbar />
 
-                {/* Desktop Only */}
-
-                <div className="d-none d-lg-block">
+                 {/* =========================
+                    BOTTOM NAVBAR
+                    Visible from small mobile and above
+                ========================== */}
+                <div className="desktop-bottom-navbar  d-none d-sm-block">
 
                     <BottomNavbar />
 

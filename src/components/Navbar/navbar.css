@@ -292,114 +292,275 @@
 }   
 
 /* =====================================================
-   MOBILE (media queries)
+   MOBILE BOTTOM NAVBAR
+   Inside Hamburger Menu
 ===================================================== */
 
+.mobile-bottom-navbar {
+    display: none;
+}
 
-@media(max-width:768px), (max-width:992px){
 
-    .header-icons .icon-btn{
+/* =========================
+   RESPONSIVE
+========================= */
 
-        width:36px;
-        height:36px;
+/* =====================================================
+   TABLET / LARGE MOBILE
+   768px - 850px
+===================================================== */
 
-    }
-    
-    .navbar-toggler{
+@media (max-width: 850px) and (min-width: 768px) {
 
-        display:flex; 
-        width:48px;
-        height:37px;
-
-    }
-
-    span.navbar-toggler-icon{
-
-        height:30px;
-        background-size:30px 30px;
-
+    .visible-icons {
+        gap: 5px;
     }
 
-    .bottom-navbar .nav{
+    .header-icons {
+        gap: 5px;
+    }
 
-        display:flex;
-        flex-direction:column;
-        align-items:flex-start;
+    .header-icons .icon-btn {
+        width: 32px;
+        height: 32px;
+    }
 
-        text-align: left;
+    .login-buttons {
+        gap: 5px;
+    }
+
+    .login-buttons .btn-signin,
+    .login-buttons .btn-register {
+        padding: 5px 10px;
+        font-size: 0.75rem;
+    }
+}
+
+
+
+/* =====================================================
+   TABLET / SMALL MOBILE
+   767px - 576px
+===================================================== */
+
+@media (max-width: 767px) and (min-width: 576px) {
+    /* =====================================================
+   SEARCH + LOGIN SAME ROW
+===================================================== */
+
+.mobile-search-login-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+
+    width: 100%;
+}
+
+/* Search */
+
+.mobile-search-login-row .search-wrapper {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Login buttons */
+
+.mobile-search-login-row .login-buttons .btn {
+    font-size: 0.85rem;
+}
+
+    /* =========================
+       HEADER ICONS
+    ========================== */
+
+    .header-icons .icon-btn {
+        width: 36px;
+        height: 36px;
+    }
+
+
+    /* =========================
+       HAMBURGER
+    ========================== */
+
+    .navbar-toggler {
+        display: flex;
+
+        width: 48px;
+        height: 37px;
+    }
+
+    span.navbar-toggler-icon {
+        height: 30px;
+
+        background-size: 30px 30px;
+    }
+
+
+    /* =========================
+       BOTTOM NAVBAR
+       KEEP HORIZONTAL
+    ========================== */
+
+    .bottom-navbar .nav {
+
+        display: flex;
+
+        flex-direction: row;
+
+        align-items: center;
+        justify-content: center;
+
+        width: 100%;
+
+        gap: 5px;
+
         font-size: 0.90rem;
+    }
 
-        width:100%;
-        gap:10px;
+    .bottom-navbar .nav-item {
+        width: auto;
+    }
+
+    .bottom-navbar .nav-link {
+        padding: 8px 12px;
+
+        white-space: nowrap;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+   Below 576px
+===================================================== */
+
+@media (max-width: 575px) {
+
+    /* =========================
+       ICONS
+    ========================== */
+
+    .visible-icons .header-icons .icon-btn {
+
+        width: 30px;
+        height: 30px;
+    }
+
+
+    /* =========================
+       HAMBURGER
+    ========================== */
+
+    .visible-icons .navbar-toggler {
+
+        display: flex;
+
+        width: 35px;
+        height: 30px;
+
+        padding: 2px 6px;
+    }
+
+    span.navbar-toggler-icon {
+
+        height: 25px;
+
+        background-size: 25px 25px;
+    }
+
+
+    /* =========================
+       MOBILE SEARCH
+    ========================== */
+
+    .search-wrapper .input-group .search-input,
+    .search-wrapper .input-group .search-icon {
+
+        max-width: 100%;
+
+        margin-bottom: 10px;
+
+        font-size: 0.75rem;
+    }
+
+
+    /* =========================
+       LOGIN BUTTONS
+    ========================== */
+
+    .collapse .login-buttons .btn {
+
+        font-size: 0.75rem;
+
+        text-align: center;
+    }
+
+    .mobile-bottom-navbar {
+        display: block;
+
+        width: 100%;
+
+        margin-top: 15px;
+    }
+
+    /* Bottom navbar inside hamburger */
+
+    .mobile-bottom-navbar .bottom-navbar {
+
+        width: 100%;
+
+        border-top: 1px solid #eee;
+        border-bottom: none;
+
+        padding: 5px 0;
 
     }
 
-    .bottom-navbar .nav-item{
 
-        width:100%;
+    /* Stack navigation vertically */
 
-    }
+    .mobile-bottom-navbar .bottom-navbar .nav {
 
-}    
+        display: flex;
 
-@media(max-width:576px){
-    
-    .visible-icons .header-icons .icon-btn{
+        flex-direction: column;
 
-        width:30px;
-        height:30px;
+        align-items: stretch;
 
-    }
+        width: 100%;
 
-    .visible-icons .navbar-toggler{
-
-        display:flex;
-        width:35px;
-        height:30px;
-        padding:2px 6px;
+        gap: 5px;
 
     }
 
-    span.navbar-toggler-icon{
 
-        height:25px;
-        background-size:25px 25px;
+    /* Each navigation item takes full width */
 
-    }
+    .mobile-bottom-navbar .bottom-navbar .nav-item {
 
-    .search-wrapper .input-group .search-input, .search-wrapper .input-group .search-icon{
-
-        max-width:100%;
-        margin-bottom:10px;
-        font-size:0.75rem;
+        width: 100%;
 
     }
 
-     .bottom-navbar .nav{
 
-        display:flex;
-        flex-direction:column;
-        align-items:flex-start;
+    /* Navigation links */
+
+    .mobile-bottom-navbar .bottom-navbar .nav-link {
+
+        width: 100%;
+
+        padding: 9px 15px;
 
         text-align: left;
+
         font-size: 0.80rem;
 
-        width:100%;
-        gap:10px;
+        border-radius: 8px;
 
     }
 
-    .bottom-navbar .nav-item{
-
-        width:100%;
-
-    }
-
-    .collapse .login-buttons .btn{
-
-        font-size:0.75rem;
-        text-align: center;
-
-    }
 
 }

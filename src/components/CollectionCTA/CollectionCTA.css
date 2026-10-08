@@ -1,0 +1,130 @@
+/* =========================
+   COLLECTION CTA
+========================= */
+
+.collection-cta {
+    padding: 45px 0;
+
+    background: linear-gradient(
+        135deg,
+        #f50045 0%,
+        #ff0050 100%
+    );
+
+    color: white;
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.collection-cta-content {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+}
+
+
+/* =========================
+   ICON
+========================= */
+
+.collection-cta-icon {
+    margin-bottom: 10px;
+
+    color: white;
+
+    font-size: 28px;
+
+    line-height: 1;
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+.collection-cta h2 {
+    margin: 0 0 8px;
+
+    color: white;
+
+    font-size: 22px;
+    font-weight: 700;
+}
+
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+.collection-cta p {
+    margin: 0 0 20px;
+
+    color: rgba(255, 255, 255, 0.9);
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.collection-cta-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 9px 18px;
+
+    background: white;
+
+    border-radius: 7px;
+
+    color: var(--primary);
+
+    font-size: 12px;
+    font-weight: 600;
+
+    transition: all 0.2s ease;
+}
+
+.collection-cta-button:hover {
+    background: #fff1f5;
+
+    color: var(--primary);
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 575px) {
+
+    .collection-cta {
+        padding: 40px 0;
+    }
+
+    .collection-cta h2 {
+        font-size: 20px;
+    }
+
+    .collection-cta p {
+        padding: 0 15px;
+
+        text-align: center;
+    }
+
+}

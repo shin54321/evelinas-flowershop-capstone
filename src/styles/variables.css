@@ -30,6 +30,13 @@
             #9c27ff 100%
     );
 
+    --secondary-gradient:
+        linear-gradient(
+            135deg,
+            #ff4b8b,
+            #b43cff
+        );
+
     /* ===== Text ===== */
 
     --dark: black;
