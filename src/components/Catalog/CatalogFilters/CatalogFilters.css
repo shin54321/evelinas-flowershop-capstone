@@ -1,0 +1,261 @@
+/* =====================================================
+   FILTER SIDEBAR
+===================================================== */
+
+.catalog-filters {
+    position: sticky;
+    top: 180px;
+
+    align-self: start;
+
+    padding: 15px;
+
+    background: white;
+
+    border: 1px solid #f3dce4;
+
+    border-radius: 10px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+
+/* =====================================================
+   FILTER HEADER
+===================================================== */
+
+.filters-header {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin-bottom: 5px;
+}
+
+.filters-header-title i {
+    color: #e91e63;
+
+    font-size: 13px;
+}
+
+.filters-header span {
+    margin: 0;
+
+    color: #172b4d;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   FILTER GROUP
+===================================================== */
+
+.filter-group {
+    margin-bottom: 8px;
+}
+
+.filter-group h4 {
+    margin: 0 0 8px;
+
+    color: #344054;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   CHECKBOX
+===================================================== */
+
+.filter-checkbox {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin-bottom: 3px;
+
+    color: #555;
+
+    font-size: 10px;
+
+    cursor: pointer;
+}
+
+.filter-checkbox input {
+    appearance: none;
+
+    width: 10px;
+    height: 10px;
+
+    margin: 0;
+
+    border: 1px solid #f2a7c0;
+
+    border-radius: 2px;
+
+    cursor: pointer;
+}
+
+.filter-checkbox input:checked {
+    background: #e91e63;
+
+    border-color: #e91e63;
+
+    box-shadow: inset 0 0 0 2px white;
+}
+
+
+/* =====================================================
+   PRICE
+===================================================== */
+
+.price-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 5px;
+}
+
+.price-header h4 {
+    margin: 0;
+}
+
+.price-header span {
+    color: #e91e63;
+
+    font-size: 10px;
+
+    font-weight: 500;
+}
+
+
+/* =====================================================
+   RANGE
+===================================================== */
+
+.price-range {
+    width: 100%;
+
+    accent-color: #e91e63;
+
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   CLEAR BUTTON
+===================================================== */
+
+.clear-filters-btn {
+    width: 100%;
+
+    margin: 0;
+
+    padding: 7px 10px;
+
+    background: white;
+
+    border: 1px solid #f3a8bf;
+
+    border-radius: var(--radius-sm);
+
+    color: #e91e63;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.clear-filters-btn:hover {
+    background: #fff5f8;
+
+    border-color: #e91e63;
+}
+
+/* =====================================================
+   FILTER TOGGLE HEADER
+===================================================== */
+
+.filters-header {
+    width: 100%;
+    padding: 0;
+    background: transparent;
+    border: none;
+    text-align: left;
+    font-family: inherit;
+    cursor: default;
+}
+
+.filters-header-title {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.filters-toggle-arrow {
+    display: none;
+}
+
+/* Keep filters visible on desktop and tablet */
+.filters-content {
+    display: block;
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 575px) {
+    .catalog-filters {
+        position: sticky;
+
+        top: 120px;
+
+        z-index: 900;
+
+        align-self: auto;
+
+        margin-bottom: 10px;
+        padding: 10px 15px;
+    }
+
+    .filters-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+    }
+
+    .filters-toggle-arrow {
+        display: inline-block;
+        color: #e91e63;
+        font-size: 14px;
+        transition: transform 0.2s ease;
+    }
+
+    /* Hide filter options by default on mobile */
+    .filters-content {
+        display: none;
+        padding-top: 10px;
+    }
+
+    /* Show filter options when opened */
+    .catalog-filters.filters-open .filters-content {
+        display: block;
+    }
+}

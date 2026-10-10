@@ -31,11 +31,12 @@ function ProductCard({product}) {
 
                     </Link> 
 
-                    {/* Badge */}
-                    <span className="product-badge">
-                        <i className="bi bi-fire me-1"></i>
-                        {product.badge}
-                    </span>
+                    {product.badge && (
+                        <span className="product-badge">
+                            <i className="bi bi-fire me-1"></i>
+                            {product.badge}
+                        </span>
+                    )}
 
                 </div>      
                 

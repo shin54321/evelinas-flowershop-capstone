@@ -2,6 +2,9 @@ import orchidImg from "../assets/images/products/orchid.jpg";
 import rosebouquetImg from "../assets/images/products/rose-bouquet.jpg";
 import sunflowerbouquetImg from "../assets/images/products/sunflower-bouquet.jpg";
 import tulipImg from "../assets/images/products/tulip.jpg";
+import tulip_bouquetImg from "../assets/images/products/tulip-bouquet.jpg";
+import gerbera_bouquetImg from "../assets/images/products/gerbera-bouquet.jpg";
+import carnation_bouquetImg from "../assets/images/products/carnation-bouquet.jpg";
 
 const products = [
     {
@@ -74,7 +77,8 @@ const products = [
         occasions: [
             "Anniversary",
             "Romance",
-            "Valentine's Day"
+            "Valentine's Day",
+            "Wedding"
         ],
 
         colors: [
@@ -145,7 +149,7 @@ const products = [
             "Romance",
             "Valentine's Day",
             "Birthday",
-            "Graduation"
+            "Wedding"
         ],
 
         colors: [
@@ -158,6 +162,110 @@ const products = [
         inStock: true,
 
         badge: "Best Seller"
+    },
+
+    {
+        id: 5,
+        slug: "/catalog/gerbera_bouquet",
+        name: "Gerbera Bouquet",
+        image: gerbera_bouquetImg,
+        price: 300,
+
+        description: "Bright and cheerful gerbera daisies that bring color and happiness to any occasion.",
+
+        averageRating: 4.0,
+        reviewCount: 12,
+        totalSales: 35,
+
+        flowerTypes: [
+            "Gerbera"
+        ],
+
+        occasions: [
+            "Birthday",
+            "Graduation",
+            "Thank You",
+            "Get Well"
+        ],
+
+        colors: [
+            "Pink",
+            "Red",
+            "Orange",
+            "Yellow",
+            "White"
+        ],
+
+        inStock: true
+    },
+    {
+        id: 6,
+        slug: "/catalog/carnation_bouquet",
+        name: "Carnation Bouquet",
+        image: carnation_bouquetImg,
+        price: 280,
+
+        description: "A lovely arrangement of carnations, perfect for expressing appreciation, care, and affection.",
+
+        averageRating: 3.8,
+        reviewCount: 8,
+        totalSales: 20,
+
+        flowerTypes: [
+            "Carnation"
+        ],
+
+        occasions: [
+            "Birthday",
+            "Anniversary",
+            "Thank You",
+            "Mother's Day",
+            "Wedding"
+        ],
+
+        colors: [
+            "Pink",
+            "Red",
+            "White",
+            "Yellow"
+        ],
+
+        inStock: true
+    },
+    {
+        id: 7,
+        slug: "/catalog/tulip_bouquet",
+        name: "Tulip Bouquet",
+        image: tulip_bouquetImg,
+        price: 280,
+
+        description: "A lovely arrangement of tulips, perfect for expressing appreciation, care, and affection.",
+
+        averageRating: 4.0,
+        reviewCount: 8,
+        totalSales: 20,
+
+        flowerTypes: [
+            "Tulip"
+        ],
+
+        occasions: [
+            "Birthday",
+            "Anniversary",
+            "Thank You",
+            "Mother's Day",
+            "Valentines",
+            "Wedding"
+        ],
+
+        colors: [
+            "Pink",
+            "Red",
+            "White",
+            "Yellow"
+        ],
+
+        inStock: true
     }
     
 ];

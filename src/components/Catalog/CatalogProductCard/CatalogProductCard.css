@@ -1,0 +1,72 @@
+/* =========================================
+   CATALOG CARD CUSTOMIZATION
+========================================= */
+
+.catalog-product-card {
+    height: 100%;
+}
+
+.catalog-product-card .card {
+    height: 100%;
+}
+
+/* Consistent card heights */
+.catalog-product-card .info-section {
+    flex: 1;
+}
+
+/* Limit occasion tags on the catalog card if needed */
+.catalog-product-card .occasion-tags {
+    margin-bottom: 12px;
+}
+
+/* =========================================
+   CATALOG RESPONSIVE STYLES
+========================================= */
+
+@media (max-width: 991px) {
+    .catalog-product-card .product-image {
+        height: 160px;
+    }
+
+    .catalog-product-card .product-name h5 {
+        font-size: 16px;
+    }
+
+    .catalog-product-card .product-footer {
+        margin: 0 12px;
+        gap: 8px;
+    }
+}
+
+@media (max-width: 575px) {
+    .catalog-product-card .product-image {
+        height: 130px;
+    }
+
+    .catalog-product-card .info-section {
+        padding: 10px;
+    }
+
+    .catalog-product-card .product-name h5 {
+        font-size: 13px;
+    }
+
+    .catalog-product-card .description {
+        font-size: 11px;
+    }
+
+    .catalog-product-card .product-footer {
+        margin: 0 8px;
+        padding-bottom: 10px;
+    }
+
+    .catalog-product-card .product-price {
+        font-size: 1rem;
+    }
+
+    .catalog-product-card .view-details-btn {
+        padding: 5px 8px;
+        font-size: 10px;
+    }
+}

@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import {ToastContainer} from "react-toastify";
 
 import Home from "./pages/Home";
-import Catalog from "./pages/Catalog";
+import Catalog from "./pages/CatalogPage/Catalog";
 import ProductDetails from "./pages/ProductDetails/ProductDetails";
 import Gallery from "./pages/Gallery";
 import Recommendation from "./pages/Recommendation";

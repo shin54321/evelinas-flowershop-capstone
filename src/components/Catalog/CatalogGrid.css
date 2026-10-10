@@ -1,0 +1,87 @@
+/* =====================================================
+   PRODUCT GRID
+===================================================== */
+
+.catalog-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 15px;
+}
+
+
+/* =====================================================
+   EMPTY STATE
+===================================================== */
+
+.catalog-empty {
+    min-height: 250px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background: white;
+
+    border: 1px solid #f3dce4;
+
+    border-radius: 12px;
+}
+
+.catalog-empty i {
+    margin-bottom: 10px;
+
+    color: #e91e63;
+
+    font-size: 30px;
+}
+
+.catalog-empty h3 {
+    margin: 0 0 5px;
+
+    color: #172b4d;
+
+    font-size: 16px;
+}
+
+.catalog-empty p {
+    margin: 0;
+
+    color: #888;
+
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 991px) {
+
+    .catalog-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 12px;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 575px) {
+
+    .catalog-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 10px;
+    }
+}

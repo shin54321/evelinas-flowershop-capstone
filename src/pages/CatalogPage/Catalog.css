@@ -1,0 +1,96 @@
+/* =====================================================
+   CATALOG PAGE
+===================================================== */
+
+.catalog-page {
+    min-height: 100vh;
+
+    background: #fff5f8;
+}
+
+
+/* =====================================================
+   CATALOG CONTENT
+===================================================== */
+
+.catalog-content {
+    padding: 30px 0 50px;
+}
+
+
+/* =====================================================
+   MAIN LAYOUT
+===================================================== */
+
+.catalog-layout {
+    display: grid;
+
+    grid-template-columns: 220px 1fr;
+
+    gap: 20px;
+
+    align-items: start;
+}
+
+
+/* =====================================================
+   PRODUCTS AREA
+===================================================== */
+
+.catalog-products {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+}
+
+.catalog-results-count {
+    text-align: left;
+    
+    margin-bottom: 12px;
+
+    color: #777;
+
+    font-size: 11px;
+}
+
+.catalog-results-count strong {
+    color: var(--primary);
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 991px) {
+
+    .catalog-content {
+        padding: 25px 0 40px;
+    }
+
+    .catalog-layout {
+        grid-template-columns: 190px 1fr;
+
+        gap: 15px;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 767px) {
+
+    .catalog-content {
+        padding: 20px 0 35px;
+    }
+
+    .catalog-layout {
+        display: grid;
+        grid-template-columns: 120px minmax(0, 1fr);
+        gap: 12px;
+        align-items: start;
+    }
+}

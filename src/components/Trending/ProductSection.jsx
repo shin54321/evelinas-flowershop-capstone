@@ -33,16 +33,19 @@ function ProductSection() {
                 {/* Product Cards */}
                 <div className="row g-4 justify-content-start">
 
-                    {products.map((product) => (
-                        <div
-                            key={product.id}
-                            className="col-6 col-md-4 col-lg-3"
-                        >
-                            <ProductCard product={product} />
-
-                        </div>
-                    ))}
-
+                    {products
+                        .filter((product) =>
+                            product.badge === "Best Seller" ||
+                            product.badge === "Popular"
+                        )
+                        .map((product) => (
+                            <div
+                                key={product.id}
+                                className="col-6 col-md-4 col-lg-3"
+                            >
+                                <ProductCard product={product} />
+                            </div>
+                        ))}
                     
                 </div>
 
