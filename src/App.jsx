@@ -5,7 +5,7 @@ import Home from "./pages/Home";
 import Catalog from "./pages/CatalogPage/Catalog";
 import ProductDetails from "./pages/ProductDetails/ProductDetails";
 import Gallery from "./pages/Gallery";
-import Recommendation from "./pages/Recommendation";
+import AIRecommendation from "./pages/AIRecommendation/AIRecommendation";
 import Favorites from "./pages/Favorites/Favorites";
 import Cart from "./pages/Cart/Cart";
 import Checkout from "./pages/Checkout/Checkout";
@@ -41,7 +41,7 @@ function Layout() {
 
                 <Route path="/gallery" element={<Gallery />} />
 
-                <Route path="/recommendation" element={<Recommendation />} />
+                <Route path="/recommendation" element={<AIRecommendation />} />
 
                 <Route path="/favorites" element={<Favorites />} />
 
