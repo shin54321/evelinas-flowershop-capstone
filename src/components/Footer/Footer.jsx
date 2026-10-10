@@ -70,8 +70,8 @@ function Footer() {
                             <ul className="footer-links">
 
                                 <li>
-                                    <Link to="/">
-                                        Shop All
+                                    <Link to="/catalog">
+                                        Shop Now
                                     </Link>
                                 </li>
 
@@ -97,22 +97,36 @@ function Footer() {
 
                         </div>
 
+                        
                         {/* Occasion */}
-
                         <div className="col-xl-6 col-lg-5 col-md-4">
 
                             <h6>Shop by Occasion</h6>
 
                             <ul className="footer-links">
+                                <li>
+                                    <Link to="/catalog?occasion=Birthday">
+                                        Birthday
+                                    </Link>
+                                </li>
 
-                                <li>Birthday</li>
+                                <li>
+                                    <Link to="/catalog?occasion=Wedding">
+                                        Wedding
+                                    </Link>
+                                </li>
 
-                                <li>Wedding</li>
+                                <li>
+                                    <Link to="/catalog?occasion=Romance">
+                                        Romance
+                                    </Link>
+                                </li>
 
-                                <li>Romance</li>
-
-                                <li>Sympathy</li>
-
+                                <li>
+                                    <Link to="/catalog?occasion=Sympathy">
+                                        Sympathy
+                                    </Link>
+                                </li>
                             </ul>
 
                         </div>
