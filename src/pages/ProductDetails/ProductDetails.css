@@ -338,6 +338,26 @@
     transform: translateY(-2px);
 }
 
+/* Favorite Button Active State */
+.product-details-actions .favorite-product-btn {
+    transition: background 0.2s ease, transform 0.2s ease,
+        color 0.2s ease;
+}
+
+.product-details-actions .favorite-product-btn.is-favorite {
+    color: #e91e63;
+    background: #fce4ec;
+    border-color: #e91e63;
+}
+
+.product-details-actions .favorite-product-btn.is-favorite i {
+    color: #e91e63;
+}
+
+.product-details-actions .favorite-product-btn i {
+    font-size: 15px;
+}
+
 /* ==========================
    PRODUCT BENIFITS
 ========================== */

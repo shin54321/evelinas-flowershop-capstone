@@ -4,7 +4,7 @@ import {ToastContainer} from "react-toastify";
 import Home from "./pages/Home";
 import Catalog from "./pages/CatalogPage/Catalog";
 import ProductDetails from "./pages/ProductDetails/ProductDetails";
-import Gallery from "./pages/Gallery";
+import Gallery from "./pages/Gallery/Gallery";
 import AIRecommendation from "./pages/AIRecommendation/AIRecommendation";
 import Favorites from "./pages/Favorites/Favorites";
 import Cart from "./pages/Cart/Cart";

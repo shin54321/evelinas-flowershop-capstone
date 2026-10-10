@@ -12,6 +12,14 @@ function ProductDetails() {
 
     const [quantity, setQuantity] = useState(1);
 
+    const [favorites, setFavorites] = useState(() => {
+        try {
+            return JSON.parse(localStorage.getItem("evelina-favorites")) || [];
+        } catch {
+            return [];
+        }
+    });
+
     const { slug } = useParams();
 
     const product = products.find(
@@ -23,56 +31,77 @@ function ProductDetails() {
     }
 
     const handleAddToCart = () => {
-    const CART_KEY = "evelina-cart";
+        const CART_KEY = "evelina-cart";
 
-        let savedCart;
+            let savedCart;
 
-        try {
-            const storedCart = JSON.parse(
-                localStorage.getItem(CART_KEY)
+            try {
+                const storedCart = JSON.parse(
+                    localStorage.getItem(CART_KEY)
+                );
+
+                savedCart = Array.isArray(storedCart)
+                    ? storedCart
+                    : [];
+            } catch {
+                savedCart = [];
+            }
+
+            const existingItem = savedCart.find(
+                (item) => item.id === product.id
             );
 
-            savedCart = Array.isArray(storedCart)
-                ? storedCart
-                : [];
-        } catch {
-            savedCart = [];
-        }
+            let updatedCart;
 
-        const existingItem = savedCart.find(
-            (item) => item.id === product.id
-        );
+            if (existingItem) {
+                updatedCart = savedCart.map((item) =>
+                    item.id === product.id
+                        ? {
+                            ...item,
+                            quantity:
+                                (Number(item.quantity) || 1) + quantity,
+                        }
+                        : item
+                );
+            } else {
+                updatedCart = [
+                    ...savedCart,
+                    {
+                        id: product.id,
+                        quantity,
+                    },
+                ];
+            }
 
-        let updatedCart;
-
-        if (existingItem) {
-            updatedCart = savedCart.map((item) =>
-                item.id === product.id
-                    ? {
-                        ...item,
-                        quantity:
-                            (Number(item.quantity) || 1) + quantity,
-                    }
-                    : item
+            localStorage.setItem(
+                CART_KEY,
+                JSON.stringify(updatedCart)
             );
-        } else {
-            updatedCart = [
-                ...savedCart,
-                {
-                    id: product.id,
-                    quantity,
-                },
-            ];
-        }
+
+            window.dispatchEvent(new Event("cartUpdated"));
+
+            toast.success(`${product.name} added to cart!`);
+    };
+
+    const handleToggleFavorite = () => {
+        const isFavorite = favorites.includes(product.id);
+
+        const updatedFavorites = isFavorite
+            ? favorites.filter((id) => id !== product.id)
+            : [...favorites, product.id];
+
+        setFavorites(updatedFavorites);
 
         localStorage.setItem(
-            CART_KEY,
-            JSON.stringify(updatedCart)
+            "evelina-favorites",
+            JSON.stringify(updatedFavorites)
         );
 
-        window.dispatchEvent(new Event("cartUpdated"));
-
-        toast.success(`${product.name} added to cart!`);
+        if (isFavorite) {
+            toast.info(`${product.name} removed from favorites`);
+        } else {
+            toast.success(`${product.name} added to favorites`);
+        }
     };
 
     return (
@@ -298,15 +327,26 @@ function ProductDetails() {
                                     </span>
                                 </button>
 
-
                                 <button
                                     type="button"
-                                    className="btn favorite-product-btn"
-                                    aria-label="Add to Favorites"
+                                    className={`btn favorite-product-btn ${
+                                        favorites.includes(product.id) ? "is-favorite" : ""
+                                    }`}
+                                    onClick={handleToggleFavorite}
+                                    aria-label={
+                                        favorites.includes(product.id)
+                                            ? "Remove from Favorites"
+                                            : "Add to Favorites"
+                                    }
+                                    aria-pressed={favorites.includes(product.id)}
                                 >
-
-                                    <i className="bi bi-heart"></i>
-
+                                    <i
+                                        className={
+                                            favorites.includes(product.id)
+                                                ? "bi bi-heart-fill"
+                                                : "bi bi-heart"
+                                        }
+                                    ></i>
                                 </button>
 
                             </div>
