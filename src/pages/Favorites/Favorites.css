@@ -1,0 +1,351 @@
+
+.favorites-page {
+    min-height: 65vh;
+    padding:20px 40px;
+    background: #fff0f3;
+}
+
+.favorites-container {
+    padding-left: 22px;
+    padding-right: 22px;
+}
+
+/* HEADER */
+.favorites-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.favorites-count {
+    margin: 0;
+    color: #64748b;
+    font-size: 16px;
+}
+
+.favorites-count strong {
+    color: var(--primary);
+}
+
+.favorites-add-more span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 10px;
+    border: 1px solid #ffc4d3;
+    border-radius: var(--radius-sm);
+    background: white;
+    color: var(--primary);
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.favorites-add-more span {
+    display: inline-block;
+}
+
+.favorites-add-more span:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+
+/* PRODUCT GRID */
+.favorites-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    align-items: start;
+}
+
+.favorites-card {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid #f5dce4;
+    border-radius: 20px;
+    background: white;
+    box-shadow: 0 2px 5px rgba(30, 20, 30, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.favorites-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(30, 20, 30, 0.1);
+}
+
+/* IMAGE */
+.favorites-image-wrapper {
+    position: relative;
+    height: 280px;
+    background: #fce7ef;
+}
+
+.favorites-image-wrapper > a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.favorites-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.favorites-badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    background: #ffc400;
+    color: #664b00;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.favorites-heart {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    border-radius: 50%;
+    background: white;
+    color: #ff1654;
+    font-size: 21px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.favorites-heart:hover {
+    transform: scale(1.08);
+}
+
+/* PRODUCT INFORMATION */
+.favorites-card-body {
+    padding: 20px;
+    text-align: left;
+}
+
+.favorites-product-name {
+    margin-bottom: 8px;
+    color: #17243b;
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.favorites-product-name:hover {
+    color: var(--primary);
+}
+
+.favorites-description {
+    overflow: hidden;
+    margin-bottom: 12px;
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.favorites-tags {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.favorites-tag {
+    padding: 3px 5px;
+    border: 1px solid #ead4ff;
+    border-radius: var(--radius-sm);
+    background: #f5eaff;
+    color: var(--secondary);
+    font-size: 11px;
+}
+
+.favorites-tag.occasion {
+    border-color: #ffc4d3;
+    background: var(--primary-light);
+    color: var(--primary);
+}
+
+.favorites-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.favorites-price {
+    color: var(--primary);
+    font-size: 22px;
+}
+
+.favorites-view-btn span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 10px;
+    border: 1px solid #ff1654;
+    border-radius: 10px;
+    background: var(--primary);
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.favorites-view-btn span:hover {
+    border-color: #d90d43;
+    background: #d90d43;
+    color: white;
+}
+
+/* EMPTY STATE */
+.favorites-empty {
+    display: flex;
+    min-height: 500px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.favorites-empty-icon {
+    margin-bottom: 15px;
+    font-size: 88px;
+    line-height: 1.2;
+}
+
+.favorites-empty h1 {
+    margin-bottom: 16px;
+    color: #17243b;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.favorites-empty p {
+    max-width: 550px;
+    margin-bottom: 30px;
+    color: #64748b;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.favorites-empty-actions {
+    display: flex;
+    justify-content: center;
+}
+
+.favorites-browse-btn span,
+.favorites-ai-btn span{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+    border: 1px solid #ff1654;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.favorites-browse-btn span,
+.favorites-ai-btn span {
+    display: inline-block;
+}
+
+.favorites-browse-btn span {
+    background: var(--primary);
+    color: white;
+}
+
+.favorites-browse-btn span:hover {
+    background: #d90d43;
+    border-color: var(--primary);
+    color: white;
+}
+
+.favorites-ai-btn span {
+    background: white;
+    color: var(--primary);
+}
+
+.favorites-ai-btn span:hover {
+    background: #ffe5ec;
+    color: #d90d43;
+}
+
+/* RESPONSIVE */
+@media (max-width: 991px) {
+    .favorites-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .favorites-image-wrapper {
+        height: 250px;
+    }
+}
+
+@media (max-width: 575px) {
+    .favorites-container {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .favorites-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .favorites-image-wrapper {
+        height: 260px;
+    }
+
+    .favorites-card-body {
+        padding: 16px;
+    }
+
+    .favorites-product-name {
+        font-size: 19px;
+    }
+
+    .favorites-card-footer {
+        align-items: center;
+    }
+
+    .favorites-price {
+        font-size: 20px;
+    }
+
+    .favorites-empty {
+        min-height: 430px;
+        padding: 35px 12px;
+    }
+
+    .favorites-empty-icon {
+        font-size: 72px;
+    }
+
+    .favorites-empty h1 {
+        font-size: 25px;
+    }
+
+    .favorites-empty p {
+        font-size: 16px;
+    }
+
+    .favorites-header {
+        margin-bottom: 22px;
+    }
+
+    .favorites-browse-btn,
+    .favorites-ai-btn {
+        padding: 11px 14px;
+    }
+}

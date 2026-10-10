@@ -3,19 +3,50 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 
 function ProductCard({product}) {
+    
+    const FAVORITES_KEY = "evelina-favorites";
 
-    const [isFavorite, setIsFavorite] = useState(false);
-
-    function handleFavoriteClick() {
-
-        if (!isFavorite) {
-            toast.success(`${product.name} added to favorites!`);
-        } else {
-            toast.info(`Removed from favorites!`);
+        function getFavoriteIds() {
+            try {
+                return JSON.parse(localStorage.getItem(FAVORITES_KEY)) || [];
+            } catch {
+                return [];
+            }
         }
 
-        setIsFavorite(!isFavorite);
-    }
+        function toggleFavorite(productId) {
+            const currentFavorites = getFavoriteIds();
+
+            const updatedFavorites = currentFavorites.includes(productId)
+                ? currentFavorites.filter((id) => id !== productId)
+                : [...currentFavorites, productId];
+
+            localStorage.setItem(
+                FAVORITES_KEY,
+                JSON.stringify(updatedFavorites)
+            );
+
+            window.dispatchEvent(new Event("favoritesUpdated"));
+
+            return updatedFavorites;
+        }
+
+
+        
+    const [favoriteIds, setFavoriteIds] = useState(getFavoriteIds);
+
+    const isFavorite = favoriteIds.includes(product.id);
+
+        function handleFavoriteClick() {
+            const updatedFavorites = toggleFavorite(product.id);
+            setFavoriteIds(updatedFavorites);
+
+            if (updatedFavorites.includes(product.id)) {
+                toast.success(`${product.name} added to favorites!`);
+            } else {
+                toast.info(`${product.name} removed from favorites!`);
+            }
+        }
 
     return (
 

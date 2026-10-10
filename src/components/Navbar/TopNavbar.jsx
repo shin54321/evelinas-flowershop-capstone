@@ -1,22 +1,40 @@
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 import initialNotifications from "../../data/notifications";
 import Notifications from "../Notifications/Notifications";
 import BottomNavbar from "./BottomNavbar";
 
+import useCartCount from "../../hooks/useCartCount";
+
 function TopNavbar() {
+    const navigate = useNavigate();
+    const [searchTerm, setSearchTerm] = useState("");
+
     const [notifications, setNotifications] = useState(
         () => initialNotifications.map((notification) => ({ ...notification }))
     );
 
     const [isNotificationOpen, setIsNotificationOpen] = useState(false);
 
-    // Count unread notifications after initializing state
+    // Count unread notifications
     const unreadCount = notifications.filter(
         (notification) => notification.unread
     ).length;
+
+    // Search bouquets
+    const handleSearch = (event) => {
+        event.preventDefault();
+
+        const query = searchTerm.trim();
+
+        if (!query) return;
+
+        navigate(`/catalog?search=${encodeURIComponent(query)}`);
+    };
+
+    const cartCount = useCartCount();
 
     return (
         <nav className="navbar navbar-expand-lg top-navbar sticky-top">
@@ -40,19 +58,30 @@ function TopNavbar() {
                 </Link>
 
                 {/* SEARCH - DESKTOP */}
-                <div className="search-wrapper d-none d-md-flex flex-grow-1 mx-md-3">
+                <form
+                    className="search-wrapper d-none d-md-flex flex-grow-1 mx-md-3"
+                    onSubmit={handleSearch}
+                >
                     <div className="input-group">
-                        <span className="input-group-text search-icon">
+                        <button
+                            type="submit"
+                            className="input-group-text search-icon"
+                            aria-label="Search bouquets"
+                        >
                             <i className="bi bi-search"></i>
-                        </span>
+                        </button>
 
                         <input
-                            type="text"
+                            type="search"
                             className="form-control search-input"
                             placeholder="Search bouquets..."
+                            value={searchTerm}
+                            onChange={(event) =>
+                                setSearchTerm(event.target.value)
+                            }
                         />
                     </div>
-                </div>
+                </form>
 
                 {/* RIGHT SIDE */}
                 <div className="visible-icons d-flex align-items-center ms-auto">
@@ -105,8 +134,14 @@ function TopNavbar() {
                         </Link>
 
                         {/* CART */}
-                        <Link to="/cart" className="btn icon-btn">
-                            <i className="bi bi-cart"></i>
+                        <Link to="/cart" className="cart-nav-button text-decoration-none icon-btn">
+                            <i className="bi bi-cart3"></i>
+
+                            {cartCount > 0 && (
+                                <span className="cart-count-badge">
+                                    {cartCount > 99 ? "99+" : cartCount}
+                                </span>
+                            )}
                         </Link>
                     </div>
 
@@ -141,19 +176,30 @@ function TopNavbar() {
                     id="navbarMenu"
                 >
                     {/* MOBILE SEARCH */}
-                    <div className="search-wrapper d-md-none mt-3">
+                    <form
+                        className="search-wrapper d-md-none mt-3"
+                        onSubmit={handleSearch}
+                    >
                         <div className="input-group">
-                            <span className="input-group-text search-icon">
+                            <button
+                                type="submit"
+                                className="input-group-text search-icon"
+                                aria-label="Search bouquets"
+                            >
                                 <i className="bi bi-search"></i>
-                            </span>
+                            </button>
 
                             <input
-                                type="text"
+                                type="search"
                                 className="form-control search-input"
                                 placeholder="Search bouquets..."
+                                value={searchTerm}
+                                onChange={(event) =>
+                                    setSearchTerm(event.target.value)
+                                }
                             />
                         </div>
-                    </div>
+                    </form>
 
                     {/* MOBILE BOTTOM NAVBAR */}
                     <div className="mobile-bottom-navbar">

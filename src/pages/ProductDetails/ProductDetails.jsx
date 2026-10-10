@@ -1,13 +1,16 @@
+import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 
 import products from "../../data/products.js";
-
 import "./ProductDetails.css";
 
 import ReviewSection from "../../components/ProductDetailsComponents/ReviewSection.jsx";
 import YouMayAlsoLike from "../../components/ProductDetailsComponents/YouMayAlsoLike.jsx";
 
 function ProductDetails() {
+
+    const [quantity, setQuantity] = useState(1);
 
     const { slug } = useParams();
 
@@ -18,6 +21,59 @@ function ProductDetails() {
     if (!product) {
         return <h1>Product not found</h1>;
     }
+
+    const handleAddToCart = () => {
+    const CART_KEY = "evelina-cart";
+
+        let savedCart;
+
+        try {
+            const storedCart = JSON.parse(
+                localStorage.getItem(CART_KEY)
+            );
+
+            savedCart = Array.isArray(storedCart)
+                ? storedCart
+                : [];
+        } catch {
+            savedCart = [];
+        }
+
+        const existingItem = savedCart.find(
+            (item) => item.id === product.id
+        );
+
+        let updatedCart;
+
+        if (existingItem) {
+            updatedCart = savedCart.map((item) =>
+                item.id === product.id
+                    ? {
+                        ...item,
+                        quantity:
+                            (Number(item.quantity) || 1) + quantity,
+                    }
+                    : item
+            );
+        } else {
+            updatedCart = [
+                ...savedCart,
+                {
+                    id: product.id,
+                    quantity,
+                },
+            ];
+        }
+
+        localStorage.setItem(
+            CART_KEY,
+            JSON.stringify(updatedCart)
+        );
+
+        window.dispatchEvent(new Event("cartUpdated"));
+
+        toast.success(`${product.name} added to cart!`);
+    };
 
     return (
 
@@ -165,17 +221,26 @@ function ProductDetails() {
                             <h6>Quantity</h6>
 
                             <div className="quantity-selector">
-
-                                <button type="button">
+                                <button
+                                    type="button"
+                                    onClick={() =>
+                                        setQuantity((previous) => Math.max(1, previous - 1))
+                                    }
+                                    disabled={quantity <= 1}
+                                    aria-label="Decrease quantity"
+                                >
                                     -
                                 </button>
 
-                                <span>1</span>
+                                <span>{quantity}</span>
 
-                                <button type="button">
+                                <button
+                                    type="button"
+                                    onClick={() => setQuantity((previous) => previous + 1)}
+                                    aria-label="Increase quantity"
+                                >
                                     +
                                 </button>
-
                             </div>
 
                         </div>
@@ -224,14 +289,13 @@ function ProductDetails() {
                                 <button
                                     type="button"
                                     className="btn add-to-cart-btn d-flex align-items-center justify-content-center"
+                                    onClick={handleAddToCart}
                                 >
-
                                     <i className="bi bi-cart-plus me-2"></i>
 
                                     <span className="button-text">
                                         Add to Cart
                                     </span>
-
                                 </button>
 
 

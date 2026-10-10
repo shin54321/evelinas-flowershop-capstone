@@ -6,17 +6,50 @@ import "../../Trending/Trending.css";
 import "./CatalogProductCard.css";
 
 function CatalogProductCard({ product }) {
-    const [isFavorite, setIsFavorite] = useState(false);
+
+    const FAVORITES_KEY = "evelina-favorites";
+
+    function getFavoriteIds() {
+        try {
+            return JSON.parse(localStorage.getItem(FAVORITES_KEY)) || [];
+        } catch {
+            return [];
+        }
+    }
+
+    function toggleFavorite(productId) {
+        const currentFavorites = getFavoriteIds();
+
+        const updatedFavorites = currentFavorites.includes(productId)
+            ? currentFavorites.filter((id) => id !== productId)
+            : [...currentFavorites, productId];
+
+        localStorage.setItem(
+            FAVORITES_KEY,
+            JSON.stringify(updatedFavorites)
+        );
+
+        window.dispatchEvent(new Event("favoritesUpdated"));
+
+        return updatedFavorites;
+    }
+
+   
+    const [favoriteIds, setFavoriteIds] = useState(getFavoriteIds);
+
+    const isFavorite = favoriteIds.includes(product.id);
 
     function handleFavoriteClick() {
-        if (!isFavorite) {
+        const updatedFavorites = toggleFavorite(product.id);
+        setFavoriteIds(updatedFavorites);
+
+        if (updatedFavorites.includes(product.id)) {
             toast.success(`${product.name} added to favorites!`);
         } else {
-            toast.info("Removed from favorites!");
+            toast.info(`${product.name} removed from favorites!`);
         }
-
-        setIsFavorite(!isFavorite);
     }
+
 
     return (
         <div className="product-card catalog-product-card">

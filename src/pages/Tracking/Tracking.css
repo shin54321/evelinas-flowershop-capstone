@@ -1,0 +1,169 @@
+.tracking-page {
+    min-height: 75vh;
+    padding-bottom: 50px;
+    background: #fff1f3;
+}
+
+.tracking-banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 15px;
+    color: #fff;
+    background: var(--primary-gradient);
+    text-align: center;
+}
+
+.tracking-banner > i {
+    margin-bottom: 5px;
+    font-size: 25px;
+}
+
+.tracking-banner h1 {
+    margin-bottom: 5px;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.tracking-banner p {
+    margin: 0;
+    font-size: 12px;
+}
+
+.tracking-container {
+    width: 92%;
+    max-width: 620px;
+    margin: 24px auto 0;
+}
+
+.tracking-tabs {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.tracking-tab {
+    display: flex;
+    min-width: 0;
+    min-height: 64px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 8px 4px;
+    color: #64748b;
+    background: #fff;
+    border: 1px solid #f4dfe7;
+    border-radius: var(--radius);
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.tracking-tab.active {
+    color: #b45309;
+    background: #fffbeb;
+    border-color: #f97316;
+}
+
+.tracking-tab-icon {
+    position: relative;
+    font-size: 15px;
+}
+
+.tracking-tab-count {
+    position: absolute;
+    top: -9px;
+    right: -12px;
+    display: flex;
+    min-width: 16px;
+    height: 16px;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4px;
+    color: #fff;
+    background: var(--primary);
+    border-radius: var(--radius);
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.tracking-section-heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.tracking-section-heading h2 {
+    margin: 0;
+    color: #172033;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.tracking-section-heading > span {
+    padding: 4px 9px;
+    color: var(--primary);
+    background: #ffe4eb;
+    border: 1px solid #fecdd8;
+    border-radius: var(--radius-sm);
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.tracking-focus {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 18px;
+    padding: 12px;
+    color: #475569;
+    background: #fff;
+    border: 1px solid #f4dfe7;
+    border-radius: 9px;
+    font-size: 13px;
+}
+
+.tracking-focus button {
+    color: var(--primary);
+    background: transparent;
+    border: 0;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.tracking-focus button:hover {
+    color: #fecdd8;
+}
+
+@media (max-width: 480px) {
+    .tracking-banner {
+        padding: 26px 14px;
+    }
+
+    .tracking-banner h1 {
+        font-size: 25px;
+    }
+
+    .tracking-banner p {
+        font-size: 12px;
+    }
+
+    .tracking-container {
+        width: 94%;
+        margin-top: 18px;
+    }
+
+    .tracking-tabs {
+        gap: 5px;
+    }
+
+    .tracking-tab {
+        min-height: 58px;
+        font-size: 10px;
+    }
+}

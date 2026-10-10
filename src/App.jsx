@@ -6,10 +6,11 @@ import Catalog from "./pages/CatalogPage/Catalog";
 import ProductDetails from "./pages/ProductDetails/ProductDetails";
 import Gallery from "./pages/Gallery";
 import Recommendation from "./pages/Recommendation";
-import Favorites from "./pages/Favorites";
-import Cart from "./pages/Cart";
-import Checkout from "./pages/Checkout";
-import Tracking from "./pages/Tracking";
+import Favorites from "./pages/Favorites/Favorites";
+import Cart from "./pages/Cart/Cart";
+import Checkout from "./pages/Checkout/Checkout";
+import OrderConfirmation from "./pages/OrderConfirmation/OrderConfirmation";
+import Tracking from "./pages/Tracking/Tracking";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 
@@ -47,6 +48,10 @@ function Layout() {
                 <Route path="/cart" element={<Cart />} />
 
                 <Route path="/checkout" element={<Checkout />} />
+
+                <Route path="/order-confirmation/:orderId" element={<OrderConfirmation />} />
+
+                <Route path="/track-order" element={<Tracking />} />
 
                 <Route path="/tracking" element={<Tracking />} />
 

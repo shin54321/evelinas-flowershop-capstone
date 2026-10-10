@@ -1,3 +1,4 @@
+
 import { useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 
@@ -12,7 +13,11 @@ import "./Catalog.css";
 function Catalog() {
     const [searchParams, setSearchParams] = useSearchParams();
 
-    const [searchTerm, setSearchTerm] = useState("");
+    // Initialize search from the URL
+    const [searchTerm, setSearchTerm] = useState(
+        () => searchParams.get("search") || ""
+    );
+
     const [sortOption, setSortOption] = useState("popular");
 
     // Read the selected category from the URL
@@ -28,7 +33,7 @@ function Catalog() {
     });
 
     const [priceRange, setPriceRange] = useState(1500);
-
+    
     /* =========================
        FILTER PRODUCTS
     ========================== */
@@ -36,13 +41,13 @@ function Catalog() {
     const filteredProducts = useMemo(() => {
         let result = [...products];
 
-        /* Search */
+        // Search
         if (searchTerm.trim() !== "") {
-            const search = searchTerm.toLowerCase();
+            const search = searchTerm.trim().toLowerCase();
 
             result = result.filter((product) => {
                 return (
-                    product.name.toLowerCase().includes(search) ||
+                    product.name?.toLowerCase().includes(search) ||
                     product.description?.toLowerCase().includes(search) ||
                     product.flowerTypes?.some((type) =>
                         type.toLowerCase().includes(search)
@@ -54,7 +59,7 @@ function Catalog() {
             });
         }
 
-        /* Category */
+        // Category
         if (selectedCategories.length > 0) {
             result = result.filter((product) =>
                 product.flowerTypes?.some((type) =>
@@ -63,7 +68,7 @@ function Catalog() {
             );
         }
 
-        /* Occasion */
+        // Occasion
         if (selectedOccasions.length > 0) {
             result = result.filter((product) =>
                 product.occasions?.some((occasion) =>
@@ -72,12 +77,12 @@ function Catalog() {
             );
         }
 
-        /* Price */
+        // Price
         result = result.filter(
             (product) => product.price <= priceRange
         );
 
-        /* Sorting */
+        // Sorting
         if (sortOption === "popular") {
             result.sort(
                 (a, b) => (b.totalSales || 0) - (a.totalSales || 0)
@@ -125,11 +130,7 @@ function Catalog() {
 
     return (
         <main className="catalog-page">
-
-            {/* =========================
-                CONTROLS
-            ========================== */}
-
+            {/* CONTROLS */}
             <CatalogControls
                 searchTerm={searchTerm}
                 setSearchTerm={setSearchTerm}
@@ -137,19 +138,12 @@ function Catalog() {
                 setSortOption={setSortOption}
             />
 
-
-            {/* =========================
-                CATALOG CONTENT
-            ========================== */}
-
+            {/* CATALOG CONTENT */}
             <section className="catalog-content">
-
                 <div className="container-lg">
-
                     <div className="catalog-layout">
 
                         {/* FILTER SIDEBAR */}
-
                         <CatalogFilters
                             selectedCategories={selectedCategories}
                             setSelectedCategories={setSelectedCategories}
@@ -160,31 +154,20 @@ function Catalog() {
                             onClearFilters={handleClearFilters}
                         />
 
-
                         {/* PRODUCTS */}
-
                         <div className="catalog-products">
-
                             <div className="catalog-results-count">
                                 Showing{" "}
-                                <strong>
-                                    {filteredProducts.length}
-                                </strong>{" "}
+                                <strong>{filteredProducts.length}</strong>{" "}
                                 of {products.length} bouquets
                             </div>
 
-                            <CatalogGrid
-                                products={filteredProducts}
-                            />
-
+                            <CatalogGrid products={filteredProducts} />
                         </div>
 
                     </div>
-
                 </div>
-
             </section>
-
         </main>
     );
 }
