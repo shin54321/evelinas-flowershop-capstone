@@ -17,9 +17,9 @@
     /*==== Gradients ====*/
     --primary-gradient:linear-gradient(
         135deg,
-        #ff2d75 0%,
-        #ff4b8b 40%,
-        #b43cff 100%
+        #ff1e5a 0%,
+        #f5357b 40%,
+        #a000ff 100%
     );
 
     --primary-gradient-hover:
@@ -33,8 +33,8 @@
     --secondary-gradient:
         linear-gradient(
             135deg,
-            #ff4b8b,
-            #b43cff
+            #ff1e5a,
+            #a000ff
         );
 
     /* ===== Text ===== */

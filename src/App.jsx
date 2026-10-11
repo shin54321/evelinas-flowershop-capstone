@@ -13,6 +13,7 @@ import OrderConfirmation from "./pages/OrderConfirmation/OrderConfirmation";
 import Tracking from "./pages/Tracking/Tracking";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import ForgotPassword from "./pages/ForgotPassword/ForgotPassword";
 
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
@@ -58,6 +59,8 @@ function Layout() {
                 <Route path="/login" element={<Login />} />
 
                 <Route path="/register" element={<Register />} />
+
+                <Route path="/forgot-password" element={<ForgotPassword />} />
 
             </Routes>
 
