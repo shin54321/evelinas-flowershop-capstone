@@ -55,6 +55,8 @@ function Checkout() {
             return {
                 ...product,
                 quantity: Math.max(1, Number(item.quantity) || 1),
+                deliveryDate: item.deliveryDate || "",
+                customMessage: item.customMessage || "",
             };
         })
         .filter(Boolean);
@@ -96,6 +98,9 @@ function Checkout() {
                     name: item.name,
                     price: item.price,
                     quantity: item.quantity,
+                    image: item.image,
+                    deliveryDate: item.deliveryDate || "",
+                    customMessage: item.customMessage || "",
                 })),
                 customer: {
                     fullName: formData.get("fullName"),
@@ -371,6 +376,18 @@ function Checkout() {
                                         <div className="checkout-summary-product">
                                             <strong>{item.name}</strong>
                                             <span>Qty: {item.quantity}</span>
+                                            {item.deliveryDate && (
+                                                <span className="checkout-item-detail">
+                                                    <i className="bi bi-calendar-heart"></i>
+                                                    Delivery: {new Date(`${item.deliveryDate}T00:00:00`).toLocaleDateString("en-PH")}
+                                                </span>
+                                            )}
+                                            {item.customMessage?.trim() && (
+                                                <span className="checkout-item-detail checkout-custom-message">
+                                                    <i className="bi bi-chat-heart"></i>
+                                                    Message: {item.customMessage}
+                                                </span>
+                                            )}
                                         </div>
 
                                         <strong className="checkout-product-price">

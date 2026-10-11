@@ -560,3 +560,21 @@
         font-size: 12px;
     }
 }
+
+/* Preferred delivery date and custom message in order summary */
+.checkout-summary-product .checkout-item-detail {
+    display: block;
+    color: #64748b;
+    font-size: 11px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.checkout-summary-product .checkout-item-detail i {
+    margin-right: 5px;
+    color: #ff2d75;
+}
+
+.checkout-summary-product .checkout-custom-message {
+    color: #7c3aed;
+}

@@ -129,14 +129,14 @@ function Cart() {
                     <>
                       <h1 className="cart-page-title">Shopping Cart</h1>
                       <div className="cart-layout">
-                          <section className="cart-items">
+                           <section className="cart-items">
                               {items.map((item) => (
                                   <article
                                       className="cart-item"
                                       key={item.id}
                                   >
                                       <Link
-                                          to={`/catalog/${item.slug}`}
+                                          to={item.slug}
                                           className="cart-item-image-link"
                                       >
                                           <img
@@ -148,7 +148,7 @@ function Cart() {
 
                                       <div className="cart-item-details">
                                           <Link
-                                              to={`/catalog/${item.slug}`}
+                                              to={item.slug}
                                               className="cart-item-name"
                                           >
                                               {item.name}
