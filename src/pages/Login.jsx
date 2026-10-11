@@ -50,6 +50,7 @@ function Login() {
                 JSON.stringify(loggedInUser)
             );
 
+            window.dispatchEvent(new Event("evelinaAuthChanged"));
             toast.success("Welcome back!");
 
             navigate("/");

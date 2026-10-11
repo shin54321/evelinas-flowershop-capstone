@@ -14,6 +14,8 @@ import Tracking from "./pages/Tracking/Tracking";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import ForgotPassword from "./pages/ForgotPassword/ForgotPassword";
+import CustomerDashboard from "./pages/CustomerDashboard/CustomerDashboard";
+import OrderHistory from "./pages/OrderHistory/OrderHistory";
 
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
@@ -51,6 +53,10 @@ function Layout() {
                 <Route path="/checkout" element={<Checkout />} />
 
                 <Route path="/order-confirmation/:orderId" element={<OrderConfirmation />} />
+
+                <Route path="/profile" element={<CustomerDashboard />} />
+
+                <Route path="/order-history" element={<OrderHistory />} />
 
                 <Route path="/track-order" element={<Tracking />} />
 
